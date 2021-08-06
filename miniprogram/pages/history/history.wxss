@@ -1,0 +1,32 @@
+.logs {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.item {
+  padding: 10px;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 30rpx;
+  color: #888;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.timestamp {
+  display: block;
+  margin-top: 20rpx;
+}
+.name{
+  display: inline-block;
+  width: 100%;
+  color:#cf442b
+}
+.name.completed {
+  color: #40d625;
+  text-decoration: line-through;
+}

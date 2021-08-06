@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/history/history",
+    "pages/next/next",
+    "pages/my/my"
+  ],
+  "usingComponents": {
+    "tui-divider": "/components/thorui/tui-divider/tui-divider",
+    "tui-no-data": "/components/thorui/tui-no-data/tui-no-data"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "TODOS",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#222",
+    "backgroundColor": "#f8f9fb",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "代办",
+        "iconPath": "assets/clock.png",
+        "selectedIconPath": "assets/clock-active.png"
+      },
+      {
+        "pagePath": "pages/next/next",
+        "text": "计划",
+        "iconPath": "assets/week.png",
+        "selectedIconPath": "assets/week-active.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "统计",
+        "iconPath": "assets/history.png",
+        "selectedIconPath": "assets/history-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "assets/me.png",
+        "selectedIconPath": "assets/me-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

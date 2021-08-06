@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="header-title">下周很重要</view>
+  <view class="header-desc">计划不写下来，不告诉自己必须完成，它根本不会出现。</view>
+  <block wx:if="{{ thisWeekToDo.length }}">
+    <tui-divider width="80%">本周已计划</tui-divider>
+    <view class="todos">
+      <view class="item{{ item.completed ? ' completed' : '' }}" wx:if="{{item.weekStartDay === thisWeekStartDate }}" wx:for="{{ todos }}" wx:key="index" bindtap="toggleTodoHandle" data-index="{{ index }}">
+        <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"/>
+        <text class="name">{{ item.name }}</text>
+        <icon class="remove" type="clear" size="16" catchtap="removeTodoHandle" data-index="{{ index }}"/>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <tui-no-data fixed="{{false}}" imgUrl="/assets/noorder.png">您上周没有订立这周的计划，所以这里是空的。</tui-no-data>
+  </block>
+</view>

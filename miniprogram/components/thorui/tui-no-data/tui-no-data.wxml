@@ -1,0 +1,7 @@
+<view class="tui-nodata-box {{fixed?'tui-nodata-fixed':''}}">
+	<image wx:if="{{imgUrl}}" src="{{imgUrl}}" class="tui-tips-icon" style="width:{{imgWidth+'rpx'}};height:{{imgHeight+'rpx'}}"></image>
+	<view class="tui-tips-content">
+		<slot></slot>
+	</view>
+	<view class="tui-tips-btn" hover-class="tui-btn__hover" hover-stay-time="150" style="width:{{btnWidth}}rpx;height:{{btnHeight}}rpx;background:{{backgroundColor}};border-radius:{{radius}};font-size:{{size}}rpx" wx:if="{{btnText}}" bindtap="handleClick">{{btnText}}</view>
+</view>

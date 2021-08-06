@@ -1,0 +1,90 @@
+
+.user-detail {
+  height: 100%;
+  background-color: #f5f5f5;
+  color: #353535;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.user-detail .user-header {
+  width: 120%;
+  height: 160px;
+  background: #d12f3a;
+  position: relative;
+  left: -10%;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer
+}
+
+.user-detail .head-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.5);
+  margin: 20px auto 10px;
+  overflow: hidden
+}
+
+.user-detail .empty-head-icon {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.user-detail .username {
+  color: #fff
+}
+
+.user-detail .user-container {
+  position: relative;
+  top: -35px;
+  margin-bottom: -35px
+}
+
+.user-detail .info-wrapper {
+  width: 320px;
+  margin: 0 auto;
+  border-radius: 4px;
+  padding-bottom: 20px;
+}
+
+.user-detail .info-detail-item {
+  padding: 0 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,.03);
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.03);
+  overflow: hidden
+}
+
+.user-detail .user-info {
+  padding-top: 5px;
+  padding-bottom: 5px
+}
+
+.user-detail .info-detail-item-title {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  cursor: pointer;
+  color: #353535;
+  margin-bottom: 20px;
+}
+
+.user-detail .info-item {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}

@@ -1,0 +1,37 @@
+
+<view class="user-detail">
+  <view class="user-header" style="background-color: rgb(58, 130, 248);">
+    <block wx:if="{{!hasUserInfo}}">
+        <view class="head-icon-wrap">
+          <image bindtap="getUserProfile" class="empty-head-icon" src="/assets/head.png" mode="cover"></image>
+        </view>
+      <span class="username" bindtap="getUserProfile">请点击登录</span>
+    </block>
+    <block wx:else>
+        <view class="head-icon-wrap">
+          <image bindtap="logout" class="empty-head-icon" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </view>
+      <span class="username">{{userInfo.nickName}}</span>
+    </block>
+  </view>
+  <view class="user-container">
+    <view class="info-wrapper">
+        <view class="info-detail-item-container">
+          <button class="info-detail-item-title" open-type='share'>分享给好友</button>
+        </view>
+        <view class="info-detail-item-container">
+          <button class="info-detail-item-title" bindtap="dingyueComfirm">计划提醒</button>
+        </view>
+        <view class="info-detail-item-container">
+          <button class="info-detail-item-title" open-type='contact'>意见反馈</button>
+        </view>
+        <view class="info-detail-item-container">
+          <button class="info-detail-item-title" bindtap="emptyData">清空数据</button>
+        </view>
+      <view class="info-detail-item user-info">
+        <view class="info-item introduction">
+          <span class="item-text"><text>温馨提示：\n\n1、下周计划强调计划的超前性，主要是帮助大家养成提前制定计划的好习惯。 \n\n2、所有数据保留在本地手机，没有隐私泄露风险。\n\n3、历史计划按周归档，在统计页查看。\n\n4、欢迎点击右上角三个点给小程序评分、分享、转发，谢谢！</text></span></view>
+      </view>
+    </view>
+  </view>
+</view>
