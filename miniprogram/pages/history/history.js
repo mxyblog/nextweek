@@ -17,12 +17,23 @@ Page({
       })
       //列出所有计划项目 不管是已完成还是未完成
       let historys = this.sortByWeek(todos)
-      console.log('汇总后',historys)
+      console.log('汇总后', JSON.parse( JSON.stringify( historys ) ))
       this.setData({
-        historys: historys
+        historys: historys.sort(this.compare('weekStartDay'))
       })
+      console.log('排序后',this.data.historys)
     }
   },
+
+  compare(property){
+    return function(a,b){
+      var value1 = new Date(a[property]).getTime();
+      var value2 = new Date(b[property]).getTime();
+      return value2 - value1;
+  }
+  },
+
+
   /**
    * 获取所有已完成的计划
    * @param {*} arry
