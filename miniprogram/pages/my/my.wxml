@@ -20,7 +20,7 @@
           <button class="info-detail-item-title" open-type='share'>分享给好友</button>
         </view>
         <view class="info-detail-item-container">
-          <button class="info-detail-item-title" bindtap="dingyueComfirm">计划提醒</button>
+          <button class="info-detail-item-title" bindtap="dingyueComfirm">开启计划提醒</button>
         </view>
         <view class="info-detail-item-container">
           <button class="info-detail-item-title" open-type='contact'>意见反馈</button>
@@ -30,7 +30,7 @@
         </view>
       <view class="info-detail-item user-info">
         <view class="info-item introduction">
-          <span class="item-text"><text>温馨提示：\n\n1、下周计划强调计划的超前性，主要是帮助大家养成提前制定计划的好习惯。 \n\n2、所有数据保留在本地手机，没有隐私泄露风险。\n\n3、历史计划按周归档，在统计页查看。\n\n4、欢迎点击右上角三个点给小程序评分、分享、转发，谢谢！</text></span></view>
+          <span class="item-text"><text>温馨提示：\n\n1、下周计划旨在帮助你养成提前制定计划的好习惯，建议开启计划提醒并勾选总是保持。 \n\n2、所有数据保留在本地手机，没有隐私泄露风险。\n\n3、历史计划按周归档，可在统计页查看。\n\n4、欢迎点击右上角三个点给小程序评分、分享、转发，谢谢！</text></span></view>
       </view>
     </view>
   </view>

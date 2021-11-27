@@ -31,28 +31,28 @@ Page({
         },{
           weekStartDay: Mydate.getCurrentWeekFirstDay(),
           weekEndDay: Mydate.getCurrentWeekLastDay(),
-          name: "点击左侧圆圈,可以改变本条代办完成状态",
+          name: "轻触每条待办，可以切换待办的状态",
           completed: false,
         },{
           weekStartDay: Mydate.getCurrentWeekFirstDay(),
           weekEndDay: Mydate.getCurrentWeekLastDay(),
-          name: "点击右侧删除按钮，可以将本条代办删除",
+          name: "轻触每条待办右侧X按钮，可以将对应待办删除",
           completed: false,
         },
         {
           weekStartDay: Mydate.getCurrentWeekFirstDay(),
           weekEndDay: Mydate.getCurrentWeekLastDay(),
-          name: "去计划页面开始制定下周的计划，制定后的计划到了下周将会显示在这里。",
+          name: "下周计划在计划页面制定，制定后的计划到了下周将会显示在待办。",
           completed: false,
         },{
           weekStartDay: Mydate.getCurrentWeekFirstDay(),
           weekEndDay: Mydate.getCurrentWeekLastDay(),
-          name: "相信聪明的你已经学会了，期待遇见更好的自己。",
+          name: "相信聪明的你已经学会了，期待遇见更好的你。",
           completed: false,
         },{
           weekStartDay: Mydate.getCurrentWeekFirstDay(),
           weekEndDay: Mydate.getCurrentWeekLastDay(),
-          name: "现在你可以将这些新手引导数据都一一删除",
+          name: "现在你可以将这些新手引导数据都逐一删除",
           completed: false,
         }
       ]

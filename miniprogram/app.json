@@ -23,7 +23,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "代办",
+        "text": "待办",
         "iconPath": "assets/clock.png",
         "selectedIconPath": "assets/clock-active.png"
       },

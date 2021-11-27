@@ -12,13 +12,13 @@ exports.main = async (event, context) => {
     const sendMsg = msg.data.map(async item => {
         await cloud.openapi.subscribeMessage.send({
             "touser": item.openid,
-            "templateId": "2j_q3erxVvwAltRXzkJgndEbp9XDjj-t3fxmM0ELU_M",
-            "page": "pages/index/index",
+            "templateId": "fDxJfVuwBjfXOcAdecKZDGXB-Lo70rzy7DJQfob3n2w",
+            "page": "pages/next/next",
             "data": {
-                thing3: {
-                    value: "更新本周计划的完成进度"
+                thing2: {
+                    value: "开始下周计划制定"
                 },
-                date1: {
+                time3: {
                     value: time
                 }
             }

@@ -1,16 +1,18 @@
 import Mydate from '../../common/mydate';
 import Store from '../../common/store';
 import Common from '../../common/common';
-const tmplId = 'N67wGxr2mDVzA8VaxSZihAVep7HB0oVS1GbAYp8ItaA' //这是订阅消息模板id，需自行申请
+const tmplId = ['2j_q3erxVvwAltRXzkJgndEbp9XDjj-t3fxmM0ELU_M','fDxJfVuwBjfXOcAdecKZDGXB-Lo70rzy7DJQfob3n2w'] //这是订阅消息模板id，需自行申请
 
 Page({
   data:{
     userInfo: {},
     hasUserInfo: false,
+    isSubscribe:false
   },
 
   onShow: function () {
     let userCache = Store.get('userInfo');
+    this.isAlwaysConfirm();
     console.log(userCache)
     if(userCache){
       this.setData({
@@ -24,7 +26,7 @@ Page({
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
     // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
-      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      desc: '用于显示头像', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
         console.log(res);
         this.setData({
@@ -36,32 +38,73 @@ Page({
     })
   },
 
+  isAlwaysConfirm:function(){
+    var _this=this
+    wx.getSetting({
+      withSubscriptions: true,
+      success (res) {
+        console.log(res.subscriptionsSetting.itemSettings)
+        if(res.subscriptionsSetting.itemSettings){
+          if(res.subscriptionsSetting.itemSettings.hasOwnProperty(tmplId[0]) && res.subscriptionsSetting.itemSettings.hasOwnProperty(tmplId[1])){
+            console.log("用户已永久订阅")
+            _this.setData({isSubscribe:true})
+          }
+        }
+        // res.subscriptionsSetting = {
+        //   mainSwitch: true, // 订阅消息总开关
+        //   itemSettings: {   // 每一项开关
+        //     SYS_MSG_TYPE_INTERACTIVE: 'accept', // 小游戏系统订阅消息
+        //     SYS_MSG_TYPE_RANK: 'accept'
+        //     zun-LzcQyW-edafCVvzPkK4de2Rllr1fFpw2A_x0oXE: 'reject', // 普通一次性订阅消息
+        //     ke_OZC_66gZxALLcsuI7ilCJSP2OJ2vWo2ooUPpkWrw: 'ban',
+        //   }
+        // }
+      }
+    })
+  },
+
+
+
   dingyueComfirm: function () {
+    let _this = this;
     let zhou = Mydate.getWeekNum() + 1;
+    if(_this.data.isSubscribe){
+      wx.showToast({
+        title: '您已订阅',
+        icon: 'success',
+        duration: 2000,
+      });
+      return;
+    }
     // 调用微信 API 申请发送订阅消息
     wx.requestSubscribeMessage({
       // 传入订阅消息的模板id，模板 id 可在小程序管理后台申请
-      tmplIds: [tmplId],
+      tmplIds: tmplId,
       success: res => {
         console.log(res)
-        if (res[tmplId] === 'accept') {
+        _this.isAlwaysConfirm()
+        if(_this.data.isSubscribe){
           // 这里将订阅的课程信息调用云函数存入db
           wx.cloud
-            .callFunction({
-              name: 'subscribe',
-              data: {
-                function_name:"notifySchedule",
-                title: "本年度第" + zhou + "周计划可以开始制定了",
-                time: Mydate.getNextWeekFirstDay(),
-              },
-            }).then(res => {
-              wx.showToast({
-                title: '订阅成功',
-                icon: 'success',
-                duration: 2000,
-              });
-              console.log('订阅成功', res)
-            })
+          .callFunction({
+            name: 'subscribe',
+            data: {
+              function_name:"notifySchedule"
+            },
+          }).then(res => {
+            wx.showToast({
+              title: '订阅成功',
+              icon: 'success',
+              duration: 2000,
+            });
+            console.log('订阅成功', res)
+          })
+        }else{
+          wx.showToast({
+            title: '请勾选总是保持以便接收服务通知',
+            icon: 'none',
+            duration: 2000,
+          });
         }
       },
       fail(err) {

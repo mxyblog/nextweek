@@ -30,3 +30,8 @@
   color: #40d625;
   text-decoration: line-through;
 }
+.header-desc{
+  color: #666;
+  text-align: center;
+  font-size: 14px;
+}

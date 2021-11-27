@@ -1,10 +1,5 @@
 <view class="container">
-  <view class="header-title">下周很重要</view>
-  <view class="header-desc">计划不写下来，不告诉自己必须完成，它根本不会出现。</view>
-
-<tui-divider width="80%">下周计划</tui-divider>
-
-<!--下周计划-->
+  <view class="header-desc">计划条目将在下周出现在待办页面</view>
   <view class="header">
     <image class="plus" src="../../assets/plus.png"/>
     <input class="new-todo" value="{{ input }}" placeholder="在这里写下你的下周计划" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"/>
@@ -18,6 +13,6 @@
   </view>
 </block>
 <block wx:else>
-  <tui-no-data fixed="{{false}}" imgUrl="/assets/noorder.png">你目前还没有制定下周的任何计划</tui-no-data>
+  <tui-no-data fixed="{{false}}" imgUrl="/assets/noorder.png">你还没有制定下周计划</tui-no-data>
 </block>
 </view>

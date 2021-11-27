@@ -1,5 +1,5 @@
 <view class="container">
-  <tui-divider width="80%">绿色代表已完成，红色表示未完成</tui-divider>
+  <view class="header-desc">绿色代表已完成，红色表示未完成</view>
   <block  wx:if="{{ historys.length }}">
     <view class="logs" wx:for="{{ historys }}" wx:key="i" wx:for-item="i">
       <text class="timestamp">计划时间：[{{ i.weekStartDay }} — {{ i.weekEndDay }}]</text>
